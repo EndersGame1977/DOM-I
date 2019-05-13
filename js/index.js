@@ -41,66 +41,67 @@ const siteContent = {
 // let logo = document.getElementById("logo-img");
 // logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-//Images
-let middleImg = document.getElementById("middle-img");
-middleImg.src = "/img/mid-page-accent.jpg";
+//nav items
+const navItem = document.querySelectorAll("nav a");
+navItem[0].textContent = siteContent["nav"]["nav-item-1"]; //Services
+navItem[1].textContent = siteContent["nav"]["nav-item-2"]; //Product
+navItem[2].textContent = siteContent["nav"]["nav-item-3"]; //Vision
+navItem[3].textContent = siteContent["nav"]["nav-item-4"]; //Features
+navItem[4].textContent = siteContent["nav"]["nav-item-5"]; //About
+navItem[5].textContent = siteContent["nav"]["nav-item-6"]; //Contact
 
-let headerImg = document.getElementById("cta-img");
-headerImg.src = "/img/header-img.png";
+//nav img
+const logoImg = document.querySelector("header img");
+logoImg.setAttribute("src", siteContent["nav"]["img-src"]); //logo.png
 
-let logoImg = document.getElementById("logo-img");
-logoImg.src = "/img/logo.png";
+//nav items green
+navItem.forEach(item => item.style.color = "green");
 
-//Nav
-let navLinks = document.getElementsByTagName("a");
-navLinks[0].innerHTML = "Services";
-navLinks[1].innerHTML = "Product";
-navLinks[2].innerHTML = "Vision";
-navLinks[3].innerHTML = "Features";
-navLinks[4].innerHTML = "About";
-navLinks[5].innerHTML = "Contact";
+//nav prepend and appendChild
+const appendKid = document.createElement("a");
+appendKid.textContent = "appendChild";
+document.querySelector("nav").appendChild(appendKid);
+const prepend = document.createElement("a");
+prepend.textContent = "prepend";
+document.querySelector("nav").prepend(prepend);
 
 //cta
+const ctaH1 = document.querySelector(".cta-text h1");
+ctaH1.textContent = siteContent["cta"]["h1"]; //DOM Is Awesome
 
-let cta = document.getElementsByTagName("h1")[0];
-cta.innerHTML = "dom is awesome";
-let getStarted = document.getElementsByTagName("button")[0];
-getStarted.innerHTML = "Get Started";
+const ctaButton = document.querySelector(".cta-text button");
+ctaButton.textContent = siteContent["cta"]["button"];
 
-//text content
-let mainContentHeadFeature = document.getElementsByClassName("text-content")[0].getElementsByTagName("h4")[0];
-mainContentHeadFeature.innerHTML = "Features";
-let mainContentParaFeature = document.getElementsByClassName("text-content")[0].getElementsByTagName("p")[0];
-mainContentParaFeature.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+const ctaImg = document.querySelector(".cta img");
+ctaImg.setAttribute("src", siteContent["cta"]["img-src"]); //header-img.png
 
-let mainContentHeadAbout = document.getElementsByClassName("text-content")[1].getElementsByTagName("h4")[0];
-mainContentHeadAbout.innerHTML = "About";
-let mainContentParaAbout = document.getElementsByClassName("text-content")[1].getElementsByTagName("p")[0];
-mainContentParaAbout.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+//main-content
+const mainH4 = document.querySelectorAll(".text-content h4");
+mainH4[0].textContent = siteContent["main-content"]["features-h4"]; //Features
+mainH4[1].textContent = siteContent["main-content"]["about-h4"]; //About
+mainH4[2].textContent = siteContent["main-content"]["services-h4"]; //Services
+mainH4[3].textContent = siteContent["main-content"]["product-h4"]; //Poduct
+mainH4[4].textContent = siteContent["main-content"]["vision-h4"]; //Vision
 
-let mainContentHeadServices = document.getElementsByClassName("text-content")[2].getElementsByTagName("h4")[0];
-mainContentHeadServices.innerHTML = "Services";
-let mainContentParaServices = document.getElementsByClassName("text-content")[2].getElementsByTagName("p")[0];
-mainContentParaServices.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+const mainP = document.querySelectorAll(".text-content p");
+mainP[0].textContent = siteContent["main-content"]["features-content"];
+mainP[1].textContent = siteContent["main-content"]["about-content"];
+mainP[2].textContent = siteContent["main-content"]["services-content"];
+mainP[3].textContent = siteContent["main-content"]["product-content"];
+mainP[4].textContent = siteContent["main-content"]["vision-content"];
 
-let mainContentHeadProduct = document.getElementsByClassName("text-content")[3].getElementsByTagName("h4")[0];
-mainContentHeadProduct.innerHTML = "Product";
-let mainContentParaProduct = document.getElementsByClassName("text-content")[3].getElementsByTagName("p")[0];
-mainContentParaProduct.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
-let mainContentHeadVision = document.getElementsByClassName("text-content")[4].getElementsByTagName("h4")[0];
-mainContentHeadVision.innerHTML = "Vision";
-let mainContentParaVision = document.getElementsByClassName("text-content")[4].getElementsByTagName("p")[0];
-mainContentParaVision.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+const middleImg = document.querySelector(".main-content img");
+middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
 //contact
-let contactHead = document.getElementsByClassName("contact")[0].getElementsByTagName("h4")[0];
-contactHead.innerHTML = "Contact";
-let contactPara0 = document.getElementsByClassName("contact")[0].getElementsByTagName("p")[0];
-contactPara0.innerHTML = "123 Way 456 Street<br>Someware USA";
+const contactH4 = document.querySelector(".contact h4");
+contactH4.textContent = siteContent["contact"]["contact-h4"]; //Contact
 
-let contactPara1 = document.getElementsByClassName("contact")[0].getElementsByTagName("p")[1];
-contactPara1.innerHTML = "1-888-888-8888";
+const contactP = document.querySelectorAll(".contact p");
+contactP[0].textContent = siteContent["contact"]["address"]; //123 Way 456 Street Somewhere, USA
+contactP[1].textContent = siteContent["contact"]["phone"]; //1 (888) 888-8888
+contactP[2].textContent = siteContent["contact"]["email"]; //sales@greatidea.io
 
-let contactPara2 = document.getElementsByClassName("contact")[0].getElementsByTagName("p")[2];
-contactPara2.innerHTML = "myemail@myemail.com";
+//footer
+const footerP = document.querySelector("footer p");
+footerP.textContent = siteContent["footer"]["copyright"] //Copyright Great Idea! 2018
